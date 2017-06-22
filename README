@@ -1,0 +1,5 @@
+To run the email server:
+Open a new terminal and copy the command:
+
+python -m smtpd -n -c DebuggingServer localhost:1025
+
