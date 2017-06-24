@@ -4,15 +4,27 @@
 {% endblock %}
 {% block body %}
 <div class="container" style="color: white;">
-	<h1>Profile<h1>
-	<p>Username: {{ user }}</p>
+	<div class="col-xs-12">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="" role="alert">
+            <center>{{ message }}</center>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+    </div>
+    <h1>Profile<h1>
+    <p>Username: {{ user }}</p>
 	<p>First name: {{ user.first_name }}</p>
 	<p>Last name: {{ user.last_name }}</p>
 	<p>Email: {{ user.email }}</p>
-        <p>Description: {{ user.userprofile.description }}</p>
+    <p>Description: {{ user.userprofile.description }}</p>
     <p>Phone: {{ user.userprofile.phone }}</p>
     <p>City: {{ user.userprofile.city }}</p>
     <p>Website: {{ user.userprofile.website }}</p>
+    {% if user.userprofile.image %}
     <img src="{{  user.userprofile.image.url }}" width="240">
+    {% endif %}
 </div>
 {% endblock %}

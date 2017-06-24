@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',tutorial_views.login_redirect,name='login_redirect'),
     url(r'^account/', include('accounts.urls',namespace='accounts')),
+    url(r'^home/', include('home.urls',namespace='home')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     

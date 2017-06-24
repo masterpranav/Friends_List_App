@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'accounts',
+    'home',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,7 +126,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT=os.path.join(BASE_DIR, "static")
 MEDIA_URL = '/media/'
-LOGIN_REDIRECT_URL = '/account/home/'
+LOGIN_REDIRECT_URL = '/home/'
 LOGIN_URL='/account/login/'
 LOGIN_EXEMPT_URLS = (
     r'^account/logout/$',
